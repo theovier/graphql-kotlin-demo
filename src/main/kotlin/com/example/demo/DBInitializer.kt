@@ -18,6 +18,7 @@ class DBInitializer {
             setConnectionFactory(connectionFactory)
             setDatabasePopulator(CompositeDatabasePopulator().apply {
                 addPopulators(ResourceDatabasePopulator(ClassPathResource("/migrations/schema.sql")))
+                addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/company.sql")))
                 addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/employee.sql")))
             })
         }
