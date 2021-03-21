@@ -12,12 +12,15 @@ docker run --name mariadb -e "MYSQL_ROOT_PASSWORD=secret" -e MYSQL_DATABASE=db -
 
 Start the Spring Boot server providing the credentials as arguments on start. Afterwards, navigate to ``localhost:8080/playground`` in your browser. 
 You can now start querying the server. 
-For example, you can ask for a list of employees:
+For example, you can ask for a list of employees and their respective company:
 
 ```
 {
   employees {
     name
+    company {
+      name
+    }
   }
 }
 ```
