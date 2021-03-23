@@ -20,6 +20,8 @@ class DBInitializer {
                 addPopulators(ResourceDatabasePopulator(ClassPathResource("/migrations/schema.sql")))
                 addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/company.sql")))
                 addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/employee.sql")))
+                addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/customer.sql")))
+                addPopulators(ResourceDatabasePopulator(ClassPathResource("/seeder/purchase.sql")))
             })
         }
     }
