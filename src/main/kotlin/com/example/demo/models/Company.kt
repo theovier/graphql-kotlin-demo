@@ -6,7 +6,9 @@ import com.expediagroup.graphql.annotations.GraphQLIgnore
 import kotlinx.coroutines.reactive.awaitFirst
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 
+@Table("company")
 data class Company(@Id val id: Long, val name: String) {
 
     suspend fun employees(@GraphQLIgnore @Autowired repository: EmployeeRepository): List<Employee> {

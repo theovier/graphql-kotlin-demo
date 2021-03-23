@@ -6,7 +6,9 @@ import com.expediagroup.graphql.annotations.GraphQLIgnore
 import kotlinx.coroutines.reactive.awaitFirst
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 
+@Table("purchase")
 data class Purchase(@Id val id: Long, val company: Long, val customer: Long, val amount: Float) {
 
     suspend fun company(@GraphQLIgnore @Autowired repository: CompanyRepository): Company {
